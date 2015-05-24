@@ -179,7 +179,7 @@ catch(PDOException $e)
               <?php if(ISSET($_SESSION['userID'])) 
               echo "<button type='submit' class='btn btn-default' >Comment</button>";
                         else
-              echo "<button type='button' disabled='disabled' class='btn btn-default' >enter</button>";?>
+              echo "<button type='button' disabled='disabled' class='btn btn-default' >Please Log In</button>";?>
 
              </span>
              </div><!-- /input-group -->
