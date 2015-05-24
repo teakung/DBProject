@@ -63,7 +63,7 @@ catch(PDOException $e)
 
   <body>
 
- <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -72,7 +72,7 @@ catch(PDOException $e)
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="Index.php">Notebook Search</a>
+          <a class="navbar-brand" href="Index.php">Speccial</a>
         </div>
         <div class="navbar-collapse collapse">
           <?php
@@ -172,7 +172,15 @@ catch(PDOException $e)
               <input type="text" class="form-control" name="comment">
               <input type="hidden" name="notebookID" value="<?php echo $notebookID?>">
               <span class="input-group-btn">
-              <button class="btn btn-default" type="submit"> Comment </button>
+
+              <!-- <button class="btn btn-default" type="submit"> Comment </button> -->
+
+              
+              <?php if(ISSET($_SESSION['userID'])) 
+              echo "<button type='submit' class='btn btn-default' >Comment</button>";
+                        else
+              echo "<button type='button' disabled='disabled' class='btn btn-default' >enter</button>";?>
+
              </span>
              </div><!-- /input-group -->
         </div>

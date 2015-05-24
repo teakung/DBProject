@@ -1,3 +1,4 @@
+<?php session_start() ; ?>
 <?php
 $servername = "localhost";
 $username = "root";
@@ -33,11 +34,21 @@ catch(PDOException $e)
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="Index.php">Notebook Search</a>
+          <a class="navbar-brand" href="Index.php">Speccial</a>
         </div>
         <div class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right" role="form">
-            <a href="Register.html" button type="button" class="btn btn-info" >Register</a>
+          <?php
+            if (isset($_SESSION['userID'])) {?>
+               
+               <form class="navbar-form navbar-right" role="form" action = "logout.php ">
+                <?php echo $_SESSION['userID'];?>
+            <button type="submit" class="btn btn-danger">Log Out</button>
+          </form>
+
+            <?php }
+             else {?>
+              <form class="navbar-form navbar-right" role="form">
+            <a href="Register_form.php" button type="button" class="btn btn-info" >Register</a>
           </form>
           <form class="navbar-form navbar-right" role="form" action = "check_login.php" method = "post">
             <div class="form-group">
@@ -48,6 +59,8 @@ catch(PDOException $e)
             </div>
             <button type="submit" class="btn btn-success">Sign in</button>
           </form>
+            <?php }?>
+          
 
         </div><!--/.navbar-collapse -->
       </div>

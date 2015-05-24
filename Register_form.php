@@ -22,7 +22,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="Index.php">Notebook Search</a>
+          <a class="navbar-brand" href="Index.php">Speccial</a>
         </div>
         <div class="navbar-collapse collapse">
           <?php
